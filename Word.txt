@@ -1,0 +1,19 @@
+# Create Input
+name = input('Enter name file:')
+handle = open(name)
+# Construct Dictionary
+counts = dict()
+for line in handle:
+    words = line.split()
+    for word in words:
+        counts[word] = counts.get(word, 0) + 1
+# Create Logic for word count
+bigcount = None
+bigword = None
+for word, count in counts.items():
+    if bigcount is None or count > bigcount:
+        bigword = word
+        bigcount = count
+# Create Output
+print(f"Word Most Used: {bigword}")
+print(f"Word Count: {bigcount}")
