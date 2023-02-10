@@ -25,6 +25,3 @@ def word_counter():
     print(f"Word Count: {list[0][0]}")
 # Call Function
 word_counter()
-
-word_counter()
-
