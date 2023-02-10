@@ -26,3 +26,5 @@ def word_counter():
 # Call Function
 word_counter()
 
+word_counter()
+
