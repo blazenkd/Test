@@ -1,6 +1,10 @@
 import time
 import subprocess
 
+# Start Script to start timer
+# Use Debug instead of Running python script to keep timer going
+# Then stop timer by responding to question
+
 # Create path for blank test
 file_path = "test_Blank.py"
 
