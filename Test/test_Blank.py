@@ -2,15 +2,21 @@
 """
 2/10/2023 
 Time: 10 min 47 sec
+2/11/2023
+Time: 7 min 39 sec
 Mistakes:
-    handle = open(name)
-    list = sorted([(v,k) for k,v in counts.items()], reverse = True)
-    print(f"Top 10 words: ")
-    for v,k in list[:10]:
-        print(k,v)
+    None
+Slow:
+lst = sorted([(v,k) for (k,v) in counts.items()], reverse = True)
+print(f"Top 5 Most Common Words: ")
+for (k,v) in lst[:5]
+    print((k,v))
+print(f"Most Common Word: {lst[0][1]}")
+print(f"Most Common Word Count: {lst[0][0]}")
 """
 
-def word_counter():
+# Iteration 1
+def count_words():
     name = input("Enter File Name: ")
     handle = open(name)
 
@@ -20,12 +26,11 @@ def word_counter():
         for word in words:
             counts[word] = counts.get(word, 0) + 1
 
-    list = sorted([(v, k) for k,v in counts.items()], reverse=True)
-    print(f"Top 10 words: ")
-    for v,k in list[:10]:
-        print(k,v)  
+    lst = sorted([(v,k) for (k,v) in counts.items()], reverse=True)
+    print(f"Top 5 Most Common Words: ")
+    for k,v in lst[:5]:
+        print((k,v))
 
-    print(f"Most used word: {list[0][1]}")
-    print(f"Word Count: {list[0][0]}")
-
-word_counter()
+    print(f"Most Common Word: {lst[0][1]}")
+    print(f"Most Common Word Count: {lst[0][0]}")
+count_words()

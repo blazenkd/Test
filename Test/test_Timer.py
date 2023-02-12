@@ -6,24 +6,24 @@ import subprocess
 # Then stop timer by responding to question
 
 # Create path for blank test
-file_path = "test_Blank.py"
+file_path = "./test/test_Blank.py"
 
 # Initialize Start Time
 start_time = time.time()
 
 # For PC
-# subprocess.run(["code", file_path, "--new-window"], shell = True)
-subprocess.run(["code", file_path, "--reuse-window"], shell = True)
+subprocess.run(["code", file_path, "--new-window"], shell = True)
+# subprocess.run(["code", file_path, "--reuse-window"], shell = True)
 
 # Mac
 # subprocess.run(['code', "-n", "Visual Studio Code"], file_path)
 
 # Finish Input
-def finished(answer):
+def finished():
     # Create Input
     answer = input('Are you finished? ')
     print("Congrats!")
-finished("")
+finished()
 
 # Time End
 end_time = time.time()

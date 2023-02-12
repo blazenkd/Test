@@ -1,5 +1,5 @@
 # Word Counter Function
-def word_counter():
+def count_words():
     # Create Input
     name = input('Enter name file:')
     handle = open(name)
@@ -18,10 +18,10 @@ def word_counter():
     lst = sorted(lst, reverse=True)
 
     # Simpler way of doing program using list comprehension
-    list = sorted([(v,k) for k,v in counts.items()], reverse = True)
+    list = sorted([(v,k) for (k,v) in counts.items()], reverse = True)
 
     print(f"Top 10 most used words: ")
-    for val,key in list[:10]:
+    for (val,key) in list[:10]:
         print(key, val)
 
     # Create Output
@@ -29,4 +29,4 @@ def word_counter():
     print(f"Word Count: {list[0][0]}")
 
 # Call Function
-word_counter()
+count_words()
