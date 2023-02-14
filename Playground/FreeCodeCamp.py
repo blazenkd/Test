@@ -1,7 +1,29 @@
-# 2/11/2023
+# 2/12/2023
 # ---FreeCodeCamp---
 
 import re
-s = 'A message from csev@umich.edu to cwen@iupui.edu about meeting @2PM'
-lst = re.findall('\\S+@\\S+', s)
-print(lst)
+import random
+import string
+
+def generate_word(word_length):
+    letters = string.ascii_letters
+    return ''.join(random.choice(letters) for i in range(word_length))
+
+def join_word_with_symbol(word, symbol):
+    return f"{word}{symbol}"
+
+word_length = int(input("Enter word length: "))
+symbol = '@'
+word = generate_word(word_length)
+data = join_word_with_symbol(word, symbol) + join_word_with_symbol(word, symbol) + " " + join_word_with_symbol(word, symbol)
+print(data)
+
+atpos = data.find('@')
+print(atpos)
+
+sppos = data.find(" ", atpos)
+print(sppos)
+
+host = data[atpos + 1: sppos]
+print(host)
+

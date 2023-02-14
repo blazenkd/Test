@@ -1,178 +1,112 @@
-# 2/11/2023
+# 2/13/2023
 # ---SoloLearn---
-def foo(x,y):
-    if x > y:
-        return x
-    else:
-        return y
-x = foo(4,7)
-print(x)
+"""
+Generators are a type of iterable, like lists or tuples.
+Unlike lists, they don't allow indexing with arbitrary indices, but they can still
+be iterated through with for loops.
+They can be created using functions and the yield statement.
 
-def max(x, y):
-    if x >= y:
-        return x
-    else:
-        return y
+The yield statement is used to define a generator, replacing the return of a 
+function to provide a result to its caller without destroying local variables.
 
-if max(6,4) > 10:
-    print("Yes")
-else:
-    print("Nope")
+"""
 
-def shortest_string(x, y):
-    if len(x) <= len(y):
-        return x
-    else:
-        return y
-result_1 = shortest_string("cat", "doggy")
-print(result_1)
+def countdown():
+    i=5
+    while i > 0:
+        yield i
+        i -= 1
 
-def add_numbers(x, y):
-    total = x + y
-    return total
-    print("This won't be printed")
-print(add_numbers(4, 5))
+for i in countdown():
+    print(i)
 
-def double(a, b):
-    return [a*2, b*2]
-x = double(6, 9)
-print(x)
+"""
+Due to the fact that they 'yield' one item at a time, generators don't have the
+memory restrictions of lists.
+In fact, they can be infinite!
+"""
 
-def area(x, y):
-    return x * y
+# def infinite_sevens():
+#     while True:
+#         yield 7
 
-def sum(x):
-    res = 0
+# for i in infinite_sevens():
+#     print(i)
+
+"""
+Fill in the blanks to create a prime number generator that yields all prime 
+numbers in a loop. (Consider having an is_prime function already defined)
+"""
+
+def is_prime():
+    return num
+
+def get_prime():
+    num = 2
+    while True:
+        if is_prime(num):
+            yield num
+        num += 1
+print(get_prime())
+
+"""
+Finite generators can be converted into lists by passing them as arguments
+to the list function.
+
+Using generators results in improved performance, which is the result of the
+lazy (on demand) generation of values, which translates to lower memory usage.
+Furthermore, we do not need to wait until all the elements have been generated
+before we start to use them.
+"""
+def numbers(x):
     for i in range(x):
-        res += i
-    return res
-print(sum(4))
+        if i % 2 == 0:
+            yield i
+print(list(numbers(11)))
 
-def print_num(x):
-    for i in range(x):
-        print(i)
-        return
-print_num(10)
+"""
+Finding prime numbers is a common coding interview task. The given code defines
+a function isPrime(x), which returns True if x is prime. You need to create a
+generator function isGenerator(), that will take two numbers as arguments, and
+use the isPrime() function to output the prime numbers in the given range
+(between the two arguments).
 
-n = [2, 4, 6, 8]
-res = 1
-for x in n[1:3]:
-    res *= x
-print(res)
+Sample Input:
+10
+20
 
-car = {
-    'brand' : 'BMW',
-    'year' : 2018,
-    'color' : 'red',
-    'mileage' : 15000
-}
-# car_data = input("give attribute: ")
-# print(car[car_data])
-print(1500 in car)
-print("red" in car)
-print(2018 not in car)
+Sample Output:
+[11, 13, 17, 19]
+"""
 
-fib = {
-    1: 1,
-    2: 1,
-    3: 2,
-    4: 3
-}
+def isPrime(x):
+    if x < 2:
+        return False
+    elif x == 2:
+        return True  
+    for n in range(2, x):
+        if x % n ==0:
+            return False
+    return True
 
-print(fib.get(4,0))
-print(fib.get(7,5))
-# ------------------------
-# contacts = [
-#     ('James', 42),
-#     ('Amy', 21),
-#     ('John', 31),
-#     ('Amanda', 63),
-#     ('Bob', 19)
-# ]
-
-# def get_value(contacts, key):
-#     for k, v in contacts:
-#         if k == key:
-#             return f"{key} is {v}"
-#     return f"Not Found"
-
-# input_key = input()
-# print(get_value(contacts, input_key))
-
-# data = [("key1", "value1"), ("key2", "value2"), ("key3", "value3")]
-
-# def get_value(data, key):
-#     for k, v in data:
-#         if k == key:
-#             return f"{key} is {v}"
-#     return f"{key} not found"
-
-# input_key = input("Enter key: ")
-# print(get_value(data, input_key))
-
-x, y = [1, 2]
-x,y = y,x
-print(x,y)
-
-def calc(x):
-    #your code goes here
-    p = 4*side
-    a = side**2
-    return p, a
+def primeGenerator(a, b):
+    num = f
+    for num in range(num, t):
+        if isPrime(num):
+            yield num
     
+# f = int(input("Enter first number: "))
+# t = int(input("Enter last number: "))
 
-# # side = int(input())
-# p, a = calc(side)
+# print(list(primeGenerator(f, t)))
 
-# print("Perimeter: " + str(p))
-# print("Area: " + str(a))
+"""
+What is the result of this code?
+"""
+def make_word():
+  word = ""
+  for a in "spam":
+    word += a
+    yield word
 
-a, b, c, d, *e, f, g = range(20)
-print(len(e))
-
-a = {1, 2, 3}
-b = {0, 3, 4, 5}
-print(a & b)
-
-nums = [i*2 for i in range(10)]
-print(nums)
-
-# def non_vowels(word):
-#     vowels = "aeiou"
-#     return [letter for letter in word if letter.lower() not in vowels]
-
-# word = input("Enter a word: ")
-# result = non_vowels(word)
-# print(result)
-
-# word = input()
-
-# vowels = ["a", "e", "i", "o", "u"]
-
-# a = [i for i in word if i not in vowels]
-# print(a)
-
-nums = (55, 44, 33, 22)
-print(max(min(nums[:2]), abs(-42)))
-
-def test(func, arg):
-  return func(func(arg))
-
-def mult(x):
-  return x * x
-
-print(test(mult, 2))
-
-def my_func(f, arg):
-  return f(arg)
-
-print(my_func(lambda x: 2*x*x, 5))
-
-nums = [11, 22, 33, 44, 55]
-
-result = list(map(lambda x: x+5, nums))
-print(result)
-
-nums = [11, 22, 33, 44, 55]
-res = list(filter(lambda x: x%2==0, nums))
-print(res)
+print(list(make_word()))

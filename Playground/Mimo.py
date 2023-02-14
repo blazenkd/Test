@@ -1,60 +1,110 @@
-# 2/11/2023
+# 2/13/2023
 # ---Mimo---
 
-def add_bonus(salary):
-    bonus = 100
-    print(salary + bonus)
+# Create function
+def get_scores_data(scores_list):
+    highest_score = max(scores_list)
+    lowest_score = min(scores_list)
+    return (highest_score, lowest_score)
 
-add_bonus(1900)
+# Input
+scores = [31, 17, 80]
 
-def apply_discount(price):
-    discount = 20
-    discount = 10
-    return price - discount
+# Display Return (Output)
+data = get_scores_data(scores)
+print(data)
 
-final_price = apply_discount(50)
-print(final_price)
+# Indices
+highest = data[0]
+smallest = data[1]
 
-user = "Amy"
-def greet_user(name):
-    greeting = "Hi"
-    print(f"{greeting} {user}!")
-greet_user("Amy")
+# Display Return (Output)
+print(f"smallest score: {smallest}")
+print(f"highest score: {highest}")
 
-shipping = 10
-def calculate_total(cart):
-    print(cart + shipping)
 
-calculate_total(54)
+# Create function
+def get_top_three(players):
+    return players[0], players[1], players[2]
 
-single_player = True
-if single_player:
-    player_1 = "Mario"
-print(f"Player 1: {player_1}")
+# Create Input
+players = ["Sue", "Ed", "Ann", "Ty"]
 
-rent = 1000
+# Create Call Function Variable
+top_three = get_top_three(players)
 
-def calculate_spendings(groceries):
-    print(f"Total {rent + groceries}")
+# Create Output Display
+print(f" First: {top_three[0]}")
+print(f" Second: {top_three[1]}")
+print(f" Third: {top_three[2]}")
 
-print(f"Rent {rent}")
-calculate_spendings(300)
+# Create Function
+def form_team(players):
+  team = []
+  team.append(players[0])
+  team.append(players[2])
+  return team
 
-price = 100
-for i in range(2):
-    discount = 10
-    price = price - discount
-print(f"Discount: {discount}")
+# Create Call Function Variable
+team = form_team(players)
 
-def print_double(x):
-    print(2*x)
-print_double(3)
+# Make Changes to list
+team[0] = "Chloe"
 
-def exclamation(word):
-    print(word + "!")
-exclamation("spam")
+# DIsplay Output
+print(team)
 
-def printBill(text):
-    print("======")
-    print(text)
-    print("======")
+"""
+What is one of the main uses of tuples?
+    Returning multiple values inside functions.
+
+How do we separate the different values when returning multiple values from a function?
+    Using commas.
+
+Do we need parentheses when returning multiple values?
+    No, just the return keyword followed by the values.
+
+How can we save a tuple returned by a function?
+    By storing it in a variable, like any other variable.
+
+How do we retrieve the individual values from the tuple returned by a function?
+    By their index.
+
+When should we return a tuple?
+    When we're only interested in the individual values or don't intend to modify the tuple.
+
+When should we return a list instead of a tuple?
+    When we're interested in the values as a collection, and inted to modify the list.
+
+
+
+"""
+
+# Create Function
+def check_age(age):
+    can_drive = age >= 18
+    return age, can_drive
+
+# Create input
+age = 17
+
+# Create Call Function Variable
+driving_age = check_age(age)
+
+# Display output
+print(driving_age)
+
+# Create Function
+def analyze_profit(gains, expenses):
+    profit = gains - expenses
+    after_taxes = 0.85 * profit
+    above_mean = profit > 1000
+    return profit, after_taxes, above_mean
+
+# Create Input
+gains = 3000
+expenses = 1200
+
+insights = analyze_profit(gains, expenses)
+print(f"profit: {insights[0]}")
+print(f"above mean: {insights[2]}")
