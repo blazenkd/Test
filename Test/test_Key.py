@@ -1,13 +1,8 @@
 # 2/13/2023
 """
-How do I incorporate a generator and returning a tuple into this?
-Let's simplify the count_words() function first.
+" How do I organize this test file?
+What is its purpose?
 
-Looks like I need to figure out a different use for it. It seems redundant for 
-this count_words program.
-
-Current understanding of generator functions and returning tuples do not seem
-too useful for this particular script.
 """
 # Word Counter Function
 def count_words():

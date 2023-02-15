@@ -74,7 +74,7 @@ When should we return a tuple?
     When we're only interested in the individual values or don't intend to modify the tuple.
 
 When should we return a list instead of a tuple?
-    When we're interested in the values as a collection, and inted to modify the list.
+    When we're interested in the values as a collection, and intend to modify the list.
 
 
 

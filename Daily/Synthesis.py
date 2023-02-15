@@ -1,5 +1,5 @@
 # 2/13/2023
-
+# ---ChatGPT---
 """
 In this example, the generator function 'generate_tuples' generates 10 tuples,
 each consisting of a number from 0 to 9 and its double. The generator is called
