@@ -34,3 +34,24 @@ fib_gen = fibonacci_sequence()
 for i in range(10):
     print(next(fib_gen))
 print(type(fib_gen))    
+
+#---------------------------------------------
+
+import matplotlib.pyplot as plt
+
+# Sample data
+x = [1, 2, 3, 4, 5]
+y = [2, 4, 5, 4, 5]
+
+# Create the plot
+plt.plot(x, y)
+
+# Set the axis labels
+plt.xlabel('X axis label')
+plt.ylabel('Y axis label')
+
+# Set the title of the plot
+plt.title('Title of the plot')
+
+# Show the plot
+plt.show()
