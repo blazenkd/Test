@@ -2,43 +2,8 @@
 # ---Mimo---
 
 """
-Testing new system. 
-Go through each section: Mimo, Sololearn, FreeCodeCamp as usual.
-    a) Write out things that are new or unclear.
-    b) Note material that is useful and store it.
-    c) Use ChatGPT and practice recall (Read and write from memory)
-    d) Make my own spin
-"""
+#1 [Morse Code Encoder]
 
-"""
-Let's code a program to check if we have enough characters for a password. Here's a peek at
-the final code.
-"""
-password_length = 8
-input_password = 6
-
-if input_password < password_length:
-    print("Not enough characters")
-else:
-    print("Perfect password length!")
-
-
-def is_new_record(current, new_value):
-    return new_value > current
-
-result = is_new_record(120, 154)
-print(result)
-
-"""
-Test Corrections
-"""
-
-scores = [50, 70, 40]
-for score in scores:
-    bonus_points = 5
-    print(f"new score: {score + bonus_points}")
-
-"""
 Let's use our knowledge of returning values to write a function that converts a set of
 numbers to morse code.
 
@@ -65,7 +30,7 @@ morse = convert_to_morse(lock_code)
 print(f"Morse code: {morse}")
 
 """
-Fare Split Calculator
+#2 [Fare Split Calculator]
 
 Let's use our knowledge of using multiple parameters to create a function that splits a 
 Doober fare between several users.
@@ -88,6 +53,9 @@ feature_cost = 0.5
 
 shared_cost = split_fare(fare_cost, passengers, feature_cost)
 print(f"Each pays: ${shared_cost}")
+
+
+
 
 # -----------------------------------------------------------------------------------------
 # My Spin
