@@ -1,6 +1,6 @@
 """
 Video Reference:
-https://youtu.be/th4OBktqK1I?t=1812
+https://youtu.be/th4OBktqK1I?t=2301
 """
 import random
 
@@ -23,7 +23,7 @@ def get_slot_machine_spin(rows, cols, symbols):
     for symbol, symbol_count in symbols.items():
         for _ in range(symbol_count):
             all_symbols.append(symbol)
-    print(all_symbols) # ME
+
     columns = []
     for _ in range(cols):
         column = []
@@ -74,6 +74,14 @@ def get_bet():
             print("Please enter a number.")
     return amount
 
+def print_slot_machine(columns):
+    for row in range(len(columns[0])):
+        for i, column in enumerate(columns):
+            if i != len(columns) - 1:
+                print(column[row], end = " | ")
+            else:
+                print(column[row], end = "")
+        print()
 
 def main():
     balance = deposit()
@@ -87,10 +95,8 @@ def main():
             break
 
     print(f"You are betting ${bet} on {lines} lines for a total of ${total_bet}.")
-    
-    # ME
-    rows = ROWS
-    cols = COLS
-    symbols = symbol_count
-    spin = print(get_slot_machine_spin(rows, cols, symbols))
+
+    slots = get_slot_machine_spin(ROWS, COLS, symbol_count)
+    print_slot_machine(slots)    
+
 main()
