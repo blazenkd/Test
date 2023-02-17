@@ -1,86 +1,97 @@
-# 2/15/2023
+# 2/16/2023
 # ---SoloLearn---
 """
-Recursion is a very important concept in functional programming. 
+Python allows you to have functions with varying numbers of arguments.
 
-The fundamental part of recursion is self-reference -- functions calling themselves. 
-It is used to solve problems that can be broken up into easier sub-problems of the same type.
-
-A classic example of a function that is implemented recursively is the 
-factorial function, which finds the product of all positive integers below a specified number. 
-
-For example, 5! (5 factorial) is 5 * 4 * 3 * 2 * 1 (120). To implement this recursively, 
-notice that 5! = 5 * 4!, 4! = 4 * 3!, 3! = 3 * 2!, and so on. Generally, n! = n * (n-1)!. 
-
-Furthermore, 1! = 1. This is known as the base case, as it can be calculated without 
-performing any more factorials. 
-
-Below is a recursive implementation of the factorial function.
+Using *args as a function parameter enables you to pass an arbitrary number of 
+arguments to that function. The arguments are then accessible as the tuple args 
+in the body of the function.
 """
 
-def factorial(x):
-  if x == 1:
+nums = {1, 2, 3, 4, 5, 6}
+nums = {0, 1, 2, 3} & nums
+print(nums)
+nums = filter(lambda x: x > 1, nums)
+nums = list(nums)
+print(nums)
+print(len(list(nums)))
+
+"""
+This code defines a function called power that takes two arguments, x and y. 
+The function calculates the value of x raised to the power of y using a recursive 
+approach.
+
+The function first checks if y is equal to 0. If it is, the function returns 1, 
+since any number raised to the power of 0 is 1. If y is not equal to 0, the 
+function recursively calls itself with the same value of x and y-1.
+
+Each time the function is called recursively, the value of y is decreased by 1, 
+so eventually y will be equal to 0, and the function will return 1. In the meantime, 
+each recursive call multiplies the current value of x with the result of the 
+previous call.
+
+Finally, the code calls the power function with arguments 2 and 3, which returns 
+the result of 2 raised to the power of 3, which is 8. The result is printed to the 
+console using the print function.
+"""
+
+def power(x, y):
+  if y == 0:
     return 1
-  else: 
-    return x * factorial(x-1)
-
-print(factorial(5))
-
-"""
-The base case acts as the exit condition of the recursion.
-Not adding a base case results in infinite function calls, crashing the program.
-"""
-
-"""
-Recursion can also be indirect. One function can call a second, which calls the first, 
-which calls the second, and so on. This can occur with any number of functions.
-"""
-def is_even(x):
-  if x == 0:
-    return True
   else:
-    return is_odd(x-1)
+    return x * power(x, y-1)
+		
+print(power(2, 3))
 
-def is_odd(x):
-  return not is_even(x)
+""" lambda """
 
-print(is_odd(17))
-print(is_even(2))
+a = (lambda x: x*(x+1))(6)
+print(a)
 
-"""
-The given code defines a recursive function convert(), which needs to convert its argument 
-from decimal to binary.
+""" 
+The lambda function lambda x: x % 2 == 0 takes one argument x and returns True if 
+x is even (i.e., if x % 2 == 0) and False otherwise.
 
-However, the code has an error. 
-Fix the code by adding the base case for the recursion, then take a number from user input and 
-call the convert() function, to output the result.
+The filter function takes a function (in this case, the lambda function) and an 
+iterable (in this case, the nums list) as arguments, and returns an iterator that 
+yields the elements of the iterable for which the function returns True.
 
-Sample Input:
-8
-
-Sample Output:
-1000
+The list function is used to convert the iterator returned by filter into a list.
 """
 
-num = int(input())
-def convert(num):
-    if num == 0:
-        return 0
-    else:
-        return (num % 2 + 10 * convert(num // 2)) 
-
-print(convert(num))
+nums = [1, 2, 8, 3, 7]
+res = list(filter(lambda x: x % 2 == 0, nums))
+print(res)
 
 """
-What is the result of this code?
-"""
+kwargs
 
-def fib(x):
-  if x == 0 or x == 1:
-    return 1
-  else: 
-    return fib(x-1) + fib(x-2)
-print(fib(4))
+This function func() takes keyword arguments and prints the values corresponding to 
+the "zero" and "a" keys of the kwargs dictionary passed to it.
+
+This is because kwargs["zero"] is accessing the value of the "zero" key which is 8, 
+kwargs["a"] is accessing the value of the "a" key which is 0, and kwargs is the 
+dictionary containing all the keyword arguments passed to the function.
+
+"""
+def func(**kwargs):
+  print(kwargs["zero"])
+  print(kwargs["a"])
+  print(kwargs)
+
+func(a = 0, zero = 8)
+"""
+In this example, we've added a for loop to iterate over all the key-value pairs in 
+kwargs and print out a message about each one. This can be useful for debugging and
+for getting a better understanding of what's in kwargs.
+"""
+def func(**kwargs):
+  print(kwargs["zero"])
+  print(kwargs["a"])
+  for key, value in kwargs.items():
+    print(f"The value of {key} is {value}")
+
+func(a=0, zero=8, foo="bar")
 
 # -----------------------------------------------------------------------------------------
 # My Spin

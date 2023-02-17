@@ -82,6 +82,32 @@ def fib(x):
     return fib(x-1) + fib(x-2)
 print(fib(4))
 
+"""
+This code defines a function called power that takes two arguments, x and y. 
+The function calculates the value of x raised to the power of y using a recursive 
+approach.
+
+The function first checks if y is equal to 0. If it is, the function returns 1, 
+since any number raised to the power of 0 is 1. If y is not equal to 0, the 
+function recursively calls itself with the same value of x and y-1.
+
+Each time the function is called recursively, the value of y is decreased by 1, 
+so eventually y will be equal to 0, and the function will return 1. In the meantime, 
+each recursive call multiplies the current value of x with the result of the 
+previous call.
+
+Finally, the code calls the power function with arguments 2 and 3, which returns 
+the result of 2 raised to the power of 3, which is 8. The result is printed to the 
+console using the print function.
+"""
+
+def power(x, y):
+  if y == 0:
+    return 1
+  else:
+    return x * power(x, y-1)
+		
+print(power(2, 3))
 # -----------------------------------------------------------------------------------------
 # My Spin
 # -----------------------------------------------------------------------------------------

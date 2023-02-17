@@ -54,8 +54,76 @@ feature_cost = 0.5
 shared_cost = split_fare(fare_cost, passengers, feature_cost)
 print(f"Each pays: ${shared_cost}")
 
+"""
+#3 [Calculator]
 
+Let's create a simple calculator that can add, subtract, and multiply numbers.
 
+We'll create a function that takes two numbers and an operator as its parameters.
+
+Then we'll use if and elif statements to perform the correct calculation. Here's a look
+at the finished code.
+"""
+
+def calculator(num_1, num_2, op):
+    result = 0
+
+    if op == "+":
+        result = num_1 + num_2
+    elif op == "-":
+        result = num_1 - num_2
+    elif op == "*":
+        result = num_1 * num_2
+    
+    print(f"{num_1} {op} {num_2} = {result}")
+
+calculator(5, 10, "*")
+
+"""
+#4 [Common Friend Checker]
+
+Let's use our knowledge of using lists with functions to find out if a user is a common
+friend amongst two other users.
+
+We'll check if the user is in each of the friend's list and then use the & operator
+to check the resulting booleans.
+"""
+
+def is_common_friend(user, friends_a, friends_b):
+    is_friend_a = friends_a.count(user) >= 1
+    is_friend_b = friends_b.count(user) >= 1
+    is_common = is_friend_a & is_friend_b
+    return is_common
+
+friends_joe = ["Sam", "Alex", "Zoe"]
+friends_may = ["Kim", "Alex", "Cy", "Ted"]
+common_alex = is_common_friend("Alex", friends_joe, friends_may)
+print(f"Alex is a common friend {common_alex}")
+
+"""
+#5 [Classes Scheduler]
+
+Let's use our knowledge of functions and loops to match a list of classes to available
+time slots.
+
+We'll create a loop that runs once for each class, joins it with a time slot at the same 
+index, and saves the schedule in a new list.
+"""
+
+def schedule_classes(classes, times):
+    schedule = []
+
+    index = 0
+    while index < len(classes):
+        schedule_class = classes[index] + ": " + times[index]
+        schedule.append(schedule_class)
+        index += 1
+    return schedule
+
+classes = ["Algebra", "History", "Biology", "Swimming"]
+times = ["9a.m.", "11a.m.", "1p.m.", "3p.m."]
+schedule = schedule_classes(classes, times)
+print(f"Monday's schedule {schedule}")
 
 # -----------------------------------------------------------------------------------------
 # My Spin
