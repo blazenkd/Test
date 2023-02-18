@@ -1,55 +1,53 @@
-# 2/16/2023
+# 2/17/2023
 # ---FreeCodeCamp---
 """
-Webservices: API
+Web Services: API Rate Limiting and Security
 
-Application Program Interface:
+The compute resources to run these APIs are not "free"
+The data provided by these APIs are usually valuable
+The data providers might limit the number of requests per day,
+demand an API "key", or even charge for usage.
+They  might change the rules as things progress...
 
-The API itself is largely abstract in that it specifies an interface and controls the behavior of
-the objects specified in that interface. The software that provides the functionality described
-by an API is said to be an "implementation" of the API. An API is typically defined in terms of
-the programming language used to build an application
 """
 import urllib.request, urllib.parse, urllib.error
+import twurl
 import json
 
-serviceurl = "http://maps.googleapis.com/maps/api/geocode/json?"
+TWITTER_URL = 'https://api.twitter.com/1.1/friends/list.json'
 
 while True:
-  address = input('Enter location: ')
-  if len(address) < 1: break
-
-  url = serviceurl + urllib.parse.urlencode({'address': address})
+  print('')
+  acct = input("Enter Twitter Account: ")
+  if (len(acct) < 1): break
+  url = twurl.augment(TWITTER_URL,
+                        {'screen_name': acct, 'count': "5"})
   print('Retrieving', url)
-  uh = urllib.request.urlopen(url)
-  data = uh.read().decode()
-  print('Retrieved', len(data), 'characters')
+  connection = urllib.request.urlopen(url)
+  data = connection.read().decode()
+  headers = dict(connection.getheaders())
+  print('Remaining', headers['x-rate-limit-remaining'])
+  js = json.loads(data)
+  print(json.dumps(js, indent=4))
 
-  try:
-    js = json.loads(data)
-  except:
-    js = None
-  
-  if not js or 'status' not in js or js['status'] != 'OK':
-    print('==== Failur to Retrieve ====')
-    print(data)
-    continue
+for u in js['users']:
+  print(u['screen_name'])
+  s = u['status']['text']
+  print(' ', s[:50])
 
-lat = js['results'][0]['geometry']['location']['lat']
-lng = js['results'][0]['geometry']['location']['lng']
-print('lat', lat, 'lng', lng)
-location = js['results'][0]['formatted_address']
-print(location)
 """
-API Security and Rate Limiting
-  # The compute resources to run these APIs are not "free"
-  # The data provided by these APIs is usually valuable
-  # The data providers might limit the number of requests per day,
-  demand an API "key", or even charge for usage
-  # The might change the rules as things progress...
+Service Oriented Architecture - allows an application
+to be broken into parts and distributed across a network.
+
+An application program interface (API) is a contract
+for interaction.
+
+Web Services provide infrastructure for applications
+cooperating (an API) over a network - SOAP and REST are 
+two styles of web services.
+
+XML and JSON are serialzation formats
 """
-
-
 
 # -----------------------------------------------------------------------------------------
 # My Spin
