@@ -1,43 +1,32 @@
-# 2/19/2023
+# 2/21/2023
 # ---Mimo---
 
-''''''
-class Book:
-    title = "Harry Potter and the Deathly Hallows"
-    pages = 607
-    number = "7th"
-    genre = "fantasy"
-    print(f"{title} has {pages} pages")
-    print(f"It is the {number} in the series.")
+'''
+Modules
 
-class Movie:
-    name = "Toy Story 3"
-    start_time = "4:45pm"
-    end_time = "6:32pm"
-
-movie = Movie()
-print("Movie: " + movie.name)
-print("Start: " + movie.start_time)
-print("End: " + movie.end_time)
-
-class Grocery_Item:
-    def __init__(self, name, price, discount):
-        self.name = name
-        self.price = price
-        self.has_discount = discount
-
-    def display_info(self):
-        print(self.name, "is $", self.price)
-    
-apple = Grocery_Item("apple", 1, False)
-cheerios = Grocery_Item("cheerios", 4, True)
-
-apple.display_info()
-cheerios.display_info()
-print("does", apple.name, "have a discount?", apple.has_discount)
+'''
+# import math
 
 
+class FoodDelivery:
+    def __init__(self, number, items):
+        self.number = number
+        self.items = items
+    def submit_order(self):
+        print(f"Submitting order: {self.number}")
+    def make_food(self, item):
+        print(f"Made {item}")
+    def package_item(self, item):
+        print(f"Packaging {item}")
+    def complete_order(self):
+        self.submit_order()
+        for i in self.items:
+            self.make_food(i)
+            self.package_item(i)
+        print(f"Delivering order {self.number}")
 
+chicken = FoodDelivery(1, ["chicken", "rice"])
+print(chicken.complete_order())
 
 # -----------------------------------------------------------------------------------------
 # My Spin
