@@ -8,25 +8,13 @@ Modules
 # import math
 
 
-class FoodDelivery:
-    def __init__(self, number, items):
-        self.number = number
-        self.items = items
-    def submit_order(self):
-        print(f"Submitting order: {self.number}")
-    def make_food(self, item):
-        print(f"Made {item}")
-    def package_item(self, item):
-        print(f"Packaging {item}")
-    def complete_order(self):
-        self.submit_order()
-        for i in self.items:
-            self.make_food(i)
-            self.package_item(i)
-        print(f"Delivering order {self.number}")
+class Class:
+    def __init__(self, subject, time):
+        self.subject = subject
+        self.time = time
+        print("You have", self.subject, "at", self.time)
+math = Class("Math", "8:15am")
 
-chicken = FoodDelivery(1, ["chicken", "rice"])
-print(chicken.complete_order())
 
 # -----------------------------------------------------------------------------------------
 # My Spin
