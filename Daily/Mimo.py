@@ -1,4 +1,4 @@
-# 2/21/2023
+# 2/23/2023
 # ---Mimo---
 
 '''
@@ -8,12 +8,11 @@ Modules
 # import math
 
 
-class Class:
-    def __init__(self, subject, time):
-        self.subject = subject
-        self.time = time
-        print("You have", self.subject, "at", self.time)
-math = Class("Math", "8:15am")
+num_list = [21, 13, 19, 3, 11, 5, 18]
+num_list.sort()
+num_list[len(num_list) // 2]
+print(17 % 15)
+    
 
 
 # -----------------------------------------------------------------------------------------
