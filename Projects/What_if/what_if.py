@@ -7,6 +7,7 @@ class Monster:
         self.max_attack = 10
         self.attack = random.randint(self.min_attack, self.max_attack)
     
+    
     def battle(self, other):
         if self.attack > other.attack:
             # the self monster wins, so increase its attack range by one
