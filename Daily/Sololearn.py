@@ -1,42 +1,52 @@
 # 2/26/2023
 # ---SoloLearn---
 """
-Reading Files
+Writing Files
 
-The contents of a file that has been opened in text mode can be read using the read method. 
-We have created a books.txt file on the server which includes titles of books. 
-Let's read the file and output the content:
+To write to files you use the write method.
+This will create a new file called "newfile.txt" and write the content to it.
+
+In case the file already exists, its entire content will be replaced when you open it in write mode using "w".
 """
 
-file = open("/usercode/files/books.txt")
-cont = file.read()
-print(cont)
+file = open("newfile.txt", "w")
+file.write("This has been written to a file")
 file.close()
 
 '''
-To read only a certain amount of a file, you can provide the number of bytes to read as an argument to the read function. 
-Each ASCII character is 1 byte: 
+If you want to add content to an existing file, you can open it using the "a" mode, which stand for 
+"append": 
 '''
-file = open("/usercode/files/books.txt")
-print(file.read(5))
-print(file.read(7))
-print(file.read())
+file = open("newfile.txt", "a")
+
+file.write("\nThe Da Vinci Code")
 file.close()
 
 '''
-To retrieve each line in a file, you can use the readlines() method to return a list in which each element is a line in the file.
+The write method returns the number of bytes written to a file, if successful.
 '''
-file = open("/usercode/files/books.txt")
-for line in file.readlines():
-    print(line)
+msg = "Hello world!"
+file = open("newfile.txt", "w")
+amount_written = file.write(msg)
+print(amount_written)
 file.close()
+
 '''
-If you do not need the list for each line, you can simply iterate over the file variable:
+Take a number N as input and write the numbers 1 to N to the file "numbers.txt", each number on a 
+separate line.
 '''
-file = open("/usercode/files/books.txt")
-for line in file:
-    print(line)
+n = int(input())
+
+file = open("numbers.txt", "w+")
+for i in range(1, n+1):
+    file.write(str(i))
+    file.write("\n")
+
 file.close()
+
+f = open("numbers.txt", "r")
+print(f.read())
+f.close()
 
 # -----------------------------------------------------------------------------------------
 # My Spin
