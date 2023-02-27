@@ -1,3 +1,5 @@
+// 2/26/2023
+// ---Mimo---
 /* 
 A ! sign in front of true makes the expression result in false. If something is not true, it has to be
 false.

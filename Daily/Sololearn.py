@@ -1,54 +1,39 @@
 # 2/26/2023
 # ---SoloLearn---
 """
-Writing Files
-
-To write to files you use the write method.
-This will create a new file called "newfile.txt" and write the content to it.
-
-In case the file already exists, its entire content will be replaced when you open it in write mode using "w".
+Files Summary
 """
 
-file = open("newfile.txt", "w")
-file.write("This has been written to a file")
-file.close()
+'''
+In this code, the open() function is used to open the file named "newfile.txt" in binary write mode. 
+The second argument "wb" specifies the mode in which the file should be opened. 
+The "w" indicates that the file should be opened in write mode, and the "b" indicates that the file should 
+be opened in binary mode. The combination of "w" and "b" mode allows you to write binary data to the file.
+'''
+open("newfile.txt", "wb")
+
 
 '''
-If you want to add content to an existing file, you can open it using the "a" mode, which stand for 
-"append": 
+In this code, the try statement is used to attempt to open the file named "newfile.txt"" using the open() 
+function. The with statement is used to ensure that the file is automatically closed when you are done 
+reading from it. The f.read() method is used to read the contents of the file and print them to the console. If an exception occurs while attempting to open or read the file, the except statement is executed, and an error message is printed to the console.
 '''
-file = open("newfile.txt", "a")
 
-file.write("\nThe Da Vinci Code")
-file.close()
-
-'''
-The write method returns the number of bytes written to a file, if successful.
-'''
-msg = "Hello world!"
-file = open("newfile.txt", "w")
-amount_written = file.write(msg)
-print(amount_written)
-file.close()
+try:
+    with open("newfile.txt") as f:
+        print(f.read())
+except:
+    print("Error: could not open or read file.")
 
 '''
-Take a number N as input and write the numbers 1 to N to the file "numbers.txt", each number on a 
-separate line.
+In this code, the open() function is used to open the file named "records.txt" in read mode. 
+The file object is assigned to the variable f. The f.read() method is used to read the contents of the 
+file into the variable cont. The len() function is used to get the number of characters in the contents 
+of the file, which is printed to the console using the print() function. Finally, the f.close() method 
+is used to close the file when you are finished reading from it.
 '''
-n = int(input())
 
-file = open("numbers.txt", "w+")
-for i in range(1, n+1):
-    file.write(str(i))
-    file.write("\n")
-
-file.close()
-
-f = open("numbers.txt", "r")
-print(f.read())
+f = open("newfile.txt", "r")
+cont = f.read()
+print(len(cont))
 f.close()
-
-# -----------------------------------------------------------------------------------------
-# My Spin
-# -----------------------------------------------------------------------------------------
-
