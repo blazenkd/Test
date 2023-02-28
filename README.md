@@ -1,21 +1,13 @@
-This is a test README file.
+# My Programming Progress
+This repository serves as a showcase of my progress in programming. It contains folders with my work on fundamentals, projects, and a daily playground where I experiment with new ideas and techniques.
 
-This repository will be the accumulation of lessons from FreeCodeCamp, Mimo, Sololearn, and other sources with the primary focus on the Python language. 
+## Fundamentals
+The fundamentals folder contains my notes, exercises, and code related to the fundamentals of programming. This includes topics such as data types, control structures, functions, object-oriented programming, and more.
 
-My idea is that it will contain a file that contains:
-    a. Playground.py
-        1. To be able to test random bits of code
-    b. test_Timer.py
-        2. To time how long it takes to construct a program based on test_Key.py
-    c. test_Key.py
-        3. Used as the answer key before submitting
-    d. test_Blank.py
-        4. As template to take the test
-    e. test_new_Information.py
-        5. Used to add any new concepts to test_Timer.py
-    f. Any other Documents needed
+## Projects
+The projects folder contains my completed programming projects. Each project has its own folder, containing the source code, any necessary files, and a readme that explains the project and how to use it.
 
-Features to add:
-    1. Store data of timed tests somehow (pickle?)
-    2. Figure out how to run a python script while the main script is running
-        - Maybe open a new window instead of just a tab?
+## Daily Playground
+The daily_playground folder is a space where I experiment with new ideas and techniques. This is where I try out new programming languages, explore new frameworks, and work on small, experimental projects.
+
+I hope you enjoy exploring my programming progress!
