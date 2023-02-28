@@ -1,56 +1,57 @@
+// Checking Number Equality
+
 /* 
-A ! sign in front of true makes the expression result in false. If something is not true, it has to be
-false.
-
-The ! sign is the negation operator. It turns values into their opposite.
+We learned how to create and store values but how do we compare them?
+We need to compare numbers in situations like checking a user's entered PIN matches their
+saved PIN.
 */
 
-console.log(!true)
+const enteredPIN = 5448;
+const expectedPIN = 5448;
 
 /*
-The ! operator before false changes its value, too. If a value is not false. it has to be true.
+To compare if two numbers are the same, we use the equality operator, ===
 */
 
-console.log(!false)
+5===5
+
+// When comparing, there are only two results: true or false
 
 /*
-We can use the ! operator with variables to negate the values they store.
-*/
-const isMorning = true
-console.log(!isMorning)
-
-/*
-We can save a whole negation in another variable too.
-Create the variable isEvening and use ! to change isMorning to false.
+When we compare the same numbers with the equality operator, the result is true.
 */
 
-const isEvening = !isMorning
-console.log(isEvening)
+console.log(10===10);
 
-// What does the ! operator do?
-// It turns true to false values into their opposite
+/* 
+When we compare two different numbers with the equality operator, the result is false.
+*/
 
-//Why does this code display false in the console?
-const latestVersion = !true;
-console.log(latestVersion);
-// The ! operator in front of true turns its value into false.
+console.log(9===10);
 
-// What do we call the ! sign in front of true or false?
-// The ! sign is the negation operator
+// What do we use to check if two numbers are equal?
+// ===
 
-// Which value does result store?
-const result = !true;
-// false
+// What does this code display in the console?
+console.log(10 === 11);
 
-// Use the negation operator and store a value in the variable. 
-const allowPopups = !true
+
+// In which of these situations would we need to check if two numbers are equal?
+// When checking if user's level is 10
+
+// What does this code display in the console?
+console.log(5+13);
+console.log(5===13);
+
+// Check if the value of votes is equal to 11
+const votes = 10;
+console.log(votes === 11);
+
+// Add the equality comparison operator.
+console.log(99===100);
 
 // Display false in the console.
-console.log(!true)
+console.log(10 === 13);
 
-// Create the variable and save the negated value in it.
-const openSlot = true;
-const isAvailable = !openSlot
-
-// Code !true inside the display statement
-console.log(!true)
+// Check if these numbers are the same by typing ===
+console.log(100===100);
