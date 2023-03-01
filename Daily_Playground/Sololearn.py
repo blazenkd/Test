@@ -1,63 +1,63 @@
-# 2/26/2023
+# 2/28/2023
 # ---SoloLearn---
-'''
-You need to make a program that counts the number of vowels in a given text.
-The vowels are a, e, i, o, and u.
-
-Take a string as input and output the number of vowels.
-
-Sample Input:
-this is great
-
-Sample Output:
-4
-'''
-
-# var = str(input())
-# count = 0
-# for word in var.split(" "):
-#     for letter in word:
-#         if letter == "a" or "e" or "i" or "o" or "u":
-#             count += 1
-# print(count)
 
 '''
-There is an issue with the conditional statement inside the inner for loop. 
-The condition if letter == "a" or "e" or "i" or "o" or "u": is always evaluating to True because the sub-expressions after each or operator 
-are not being compared to letter. This is because the or operator evaluates each sub-expression independently and returns the first 
-sub-expression that is truthy. Since all of the sub-expressions in this condition are non-empty strings, they are truthy, and the condition 
-always evaluates to True, even if letter is not a vowel.
+String Functions
 
-To fix this issue, you can modify the condition to compare each sub-expression to letter using the == operator, 
-like this: if letter == "a" or letter == "e" or letter == "i" or letter == "o" or letter == "u":. 
-Alternatively, you can use the in operator to check if letter is in a list of vowels, 
-like this: if letter in ["a", "e", "i", "o", "u"]:.
-
-Here's the corrected code using the in operator:
+String have many useful functions:
+count(str) returns how many times the str substring appears in the given string.
+upper() converts the string to uppercase.
+lower() converts the string to lowercase.
+replace(old, new) replaces all occurrences of old with new.
+len(str) returns the length of the string (number of characters).
 '''
 
-# var = str(input())
-# count = 0
-# for word in var:
-#     if word in ["a", "e", "i", "o", "u"]:
-#         count += 1
-# print(count)
+x = "This is some text"
+
+print(x.count("s"))
+print(x.upper())
+print(x.lower())
+print(x.replace("some text", "awesome"))
+print(len(x)) 
 
 '''
-Strings can be thought of as a sequence of characters. 
-Each character in the string has its unique position (or index).
-You can access a character of a string using its index:
+Manipulating Strings
+
+You are making a text editor and need to implement find/replace functionality.
+The code declares a text string. You need to take two string inputs, which represent the substring to find and 
+what to replace it with in the text.
+Your program needs to output the number of replacements made, along with the new text.
+
+For example, for the given text "I weigh 80 kilograms. He weighs 65 kilograms.":
+
+Sample Input
+kilograms
+kg
+
+Sample Output
+2
+I weigh 80 kg. He weighs 65 kg.
+
+The program replaced 2 occurrences of the word kilograms with kg.
 '''
-x = "Hello"
-print(x[2])
+
+text = "Amy has 128 dollars, while David has 54 dollars. Amy is going to the zoo. David watches soccer."
+
+# replace_old = input()
+# replace_new = input()
+# print(text.count(replace_old))
+# print(text.replace(replace_old, replace_new))
 
 '''
-You can also use negative indices, which access the characters of the string counting from the end.
+What is the output of this code?
 '''
-print(x[-1])
+x = 'abc'
+x = x * len(x)
+print(x.count('a'))
 
-'''
-You can loop through the characters in a string using a for loop:
-'''
-for c in x:
-    print(c)
+
+
+
+
+
+
