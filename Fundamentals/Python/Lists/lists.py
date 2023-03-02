@@ -1,4 +1,3 @@
-# ---SoloLearn---
 '''
 Lists are used to store multiple elements, each corresponding to an index.
 
