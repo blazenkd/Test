@@ -84,3 +84,4 @@ let isWifiConnected = true;
 let isURLValid = true;
 const willSiteLoad = isWifiConnected && isURLValid;
 console.log(willSiteLoad);
+
