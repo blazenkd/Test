@@ -1,74 +1,37 @@
-# 2/18/2023
-# ---ChatGPT---
-'''
-"Why do we import random?"
-    We import the random module to generate random values or to make random choices. 
+# Define the grounding concepts
+class Sky:
+    def __init__(self, cloudiness):
+        self.cloudiness = cloudiness
+        
+    def is_clear(self):
+        return self.cloudiness == 0
 
-    In the provided example code, the random module is used to select a random symbol from the list of 
-    symbols for each column in the slot machine spin.
+class Rain:
+    def __init__(self, intensity):
+        self.intensity = intensity
 
-What are the attributes (methods and properties) of the random module?
-    
-    # print(dir(random))
-    
-'''
-import random
+# Define the propositions
+clear_sky = Sky(0)
+cloudy_sky = Sky(1)
+raining = Rain(1)
+not_raining = Rain(0)
 
-'''
-What are capitalized variables used for?
+# Define the logical relationships
+p = clear_sky
+q = not_raining
+f = (p.cloudiness == 0) >> (q.intensity == 0)
 
-    # They are typically used as constants.
-    # They are used to define values that will not be changed during the execution of the program.
-    # This is a convention followed by Python programmers to indicate that the value of the variable
-    should not be changed. Although Python does not enforce constants, it is considered good practice
-    to use capitalized letters for constant values.
-'''
+# Evaluate the logical relationships for different values of the propositions
+print("p.q.f")
+for i in range(2):
+    for j in range(2):
+        p = Sky(i)
+        q = Rain(j)
+        result = f.compose({clear_sky: p, not_raining: q})
+        print("{} {} {}".format(p.cloudiness, q.intensity, int(result)))
 
-ROWS = 1
-COLS = 3
+# Define a new Sky object with 0 clouds (i.e., a clear sky)
+clear_sky = Sky(0)
 
-'''How do we generate a dictionary for our slot machine?'''
-
-symbol_count = {
-    "A" : 3,
-    "B" : 6,
-    "C" : 9,
-    "D" : 12
-}
-
-
-'''How do we create a function that gets our slot machine spin based on rows, cols, and symbols?'''
-def get_slot_machine_spin(rows, cols, symbols):
-    '''Why do we start by creating an all_symbols list?'''
-    all_symbols = []
-    '''How do we check our progress with print?'''
-    print(all_symbols)
-    for symbol, symbol_count in symbols.items():
-        for _ in range(symbol_count):
-            all_symbols.append(symbol)
-    print(all_symbols)
-
-
-    columns = []
-    print(range(cols))
-    for _ in range(cols):
-        column = []
-        current_symbols = all_symbols[:]
-        print("Current Symbols: ", current_symbols)
-        for _ in range(rows):
-            value = random.choice(current_symbols)
-            print("Value: ", value)
-            current_symbols.remove(value)
-            print("Current Symbols_updated: ", current_symbols)
-            column.append(value)
-            print("Column:", column)
-        columns.append(column)
-        print("Column Appending: ", columns)
-    return columns
-
-
-spin = get_slot_machine_spin(ROWS, COLS, symbol_count)
-print(spin)
-'''Practice'''
-
-
+# Translate the statement "The sky is clear" into a logical formula
+p = clear_sky.is_clear()
