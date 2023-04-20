@@ -16,13 +16,13 @@ if response.status_code == 200:
 else:
     print("Error:", response.status_code)
 
-# print(type(response_json))
+# print(response_json)
 # print(keys)
 
 # Layer 1: battles = [{battle_uuid: _ }, {replay_url: _ }] # List of dictionaries 
 battles = response_json['battles']
 print(type(battles))
-# print(battles[0])
+print(battles[0])
 
 # Layer 2: Get each dictionary from the list
 
@@ -33,4 +33,4 @@ for d in battles:
         keys.add(k)
 
 print(keys)
-
+print(replay_url)

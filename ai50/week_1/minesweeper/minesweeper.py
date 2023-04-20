@@ -1,3 +1,11 @@
+'''
+AI50 2023
+Week 1: minesweeper.py
+Complete the implementations of the Sentence class and the MinesweeperAI class in minesweeper.py.
+In the Sentence class, complete the implementations of known_mines, known_safes, mark_mine, and mark_safe.
+In the MinesweeperAI class, complete the implementations of add_knowledge, make_safe_move, and make_random_move.
+'''
+
 import itertools
 import random
 import copy
@@ -106,14 +114,15 @@ class Sentence():
         """
         Returns the set of all cells in self.cells known to be mines.
         """
-        if self.count == len(self.cells):
-            return self.cells
+        return self.cells if self.count == len(self.cells) else set()
 
     def known_safes(self):
         """
         Returns the set of all cells in self.cells known to be safe.
         """
-        if self.count == 0:
+        if not self.cells:
+            return set()
+        elif self.count == 0:
             return self.cells
 
     def mark_mine(self, cell):
@@ -124,8 +133,7 @@ class Sentence():
         if cell in self.cells:
             self.cells.remove(cell)
             self.count -= 1
-        else:
-            pass
+
 
     def mark_safe(self, cell):
         """
@@ -134,8 +142,6 @@ class Sentence():
         """
         if cell in self.cells:
             self.cells.remove(cell)
-        else:
-            pass
 
 
 class MinesweeperAI():
@@ -192,38 +198,31 @@ class MinesweeperAI():
                if they can be inferred from existing knowledge
         """
 
-        # mark the cell as one of the moves made in the game
+        # Add the given cell to the set of moves made
         self.moves_made.add(cell)
 
-        # mark the cell as a safe cell, updating any sequences that contain the cell as well
+        # Mark the given cell as safe, and update any sequences that contain the cell
         self.mark_safe(cell)
 
-        # add new sentence to AI knowledge base based on value of cell and count
+        # Create a new sentence for the AI's knowledge base based on the given cell and count
         cells = set()
-        count_cpy = copy.deepcopy(count)
-        close_cells = self.return_close_cells(cell)     # returns neighbour cells
-        for cl in close_cells:
-            if cl in self.mines:
+        count_cpy = count
+        for close_cell in self.return_close_cells(cell):
+            if close_cell in self.mines:
                 count_cpy -= 1
-            if cl not in self.mines | self.safes:
-                cells.add(cl)                           # only add cells that are of unknown state
+            if close_cell not in self.mines and close_cell not in self.safes:
+                cells.add(close_cell)
 
-        new_sentence = Sentence(cells, count_cpy)           # prepare new sentence
+        new_sentence = Sentence(cells, count_cpy)
 
-        if len(new_sentence.cells) > 0:                 # add that sentence to knowledge only if it is not empty
+        # Add the new sentence to the knowledge base
+        if len(new_sentence.cells) > 0:
             self.knowledge.append(new_sentence)
-            # print(f"Adding new sentence: {new_sentence}")
 
-        # # print("Printing knowledge:")
-        # for sent in self.knowledge:
-        #     # print(sent)
-
-        # check sentences for new cells that could be marked as safe or as mine
+        # Use the AI's knowledge base to mark any additional cells as safe or as mines
         self.check_knowledge()
-        # print(f"Safe cells: {self.safes - self.moves_made}")
-        # print(f"Mine cells: {self.mines}")
-        # print("------------")
 
+        # Use the AI's knowledge base to infer new sentences, and add them to the knowledge base
         self.extra_inference()
 
     def return_close_cells(self, cell):
@@ -306,12 +305,7 @@ class MinesweeperAI():
         This function may use the knowledge in self.mines, self.safes
         and self.moves_made, but should not modify any of those values.
         """
-        for i in self.safes - self.moves_made:
-            # choose first safe cell that wasn't picked before
-            # print(f"Making {i} move")
-            return i
-        
-        return None
+        return next((i for i in self.safes - self.moves_made), None)
 
     def make_random_move(self):
         """
@@ -321,15 +315,13 @@ class MinesweeperAI():
             2) are not known to be mines
         """
 
-        maxmoves = self.width * self.height
+        # Create a list of all the cells on the board that have not yet been chosen as moves or marked as mines
+        available_cells = [(row, col) for row in range(self.height) for col in range(self.width)
+                            if (row, col) not in self.moves_made | self.mines]
 
-        while maxmoves > 0:
-            maxmoves -= 1
-
-            row = random.randrange(self.height)
-            column = random.randrange(self.width)
-
-            if (row, column) not in self.moves_made | self.mines:
-                return (row, column)
-
-        return None
+        # If there are any available cells, return a randomly chosen cell from the list of available cells
+        if available_cells:
+            return random.sample(available_cells, 1)[0]
+        # If there are no available cells left, return None
+        else:
+            return None
