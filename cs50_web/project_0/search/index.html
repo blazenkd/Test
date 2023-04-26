@@ -4,9 +4,28 @@
         <title>Search</title>
     </head>
     <body>
-        <form action="https://google.com/search">
-            <input type="text" name="q">
+        <!-- Use JavaScript to prevent empty search queries:
+            You could add some JavaScript code to prevent the
+            form from submitting if the user leaves the search
+            field empty. Here's an example: -->
+        <form action="https://google.com/search" onsubmit="return validateSearch()">
+            <!-- Add a label for the search input: Adding a label to the search input
+            can make it more accessible for users who use assistive technologies or
+            have difficulty using a mouse. Here's an example: -->
+            <label for="search">Search:</label>
+            <input type="text" id="search" name="q" placeholder="Search...">
             <input type="submit" value="Google Search">
         </form>
+
+        <script>
+            function validateSearch() {
+                var searchInput = document.getElementById('search');
+                if (searchInput.value.trim() === '') {
+                    alert('Please enter a search query.');
+                    return false;
+                }
+                return true;
+            }
+        </script>
     </body>
 </html>

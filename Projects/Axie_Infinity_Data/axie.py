@@ -16,3 +16,4 @@ def print_all_keys(response):
         print(key)
 
 print_all_keys(response)
+print(response)
