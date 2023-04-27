@@ -1,31 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.1/css/bootstrap.min.css"
+        integrity="sha384-9a1dac11cfe2221fb57a7b6a9ed2be2001a101e0"
+        <link rel="stylesheet" href="index.scss">
         <title>Search</title>
     </head>
     <body>
-        <!-- Use JavaScript to prevent empty search queries:
-            You could add some JavaScript code to prevent the
-            form from submitting if the user leaves the search
-            field empty. Here's an example: -->
-        <form action="https://google.com/search" onsubmit="return validateSearch()">
-            <!-- Add a label for the search input: Adding a label to the search input
-            can make it more accessible for users who use assistive technologies or
-            have difficulty using a mouse. Here's an example: -->
-            <label for="search">Search:</label>
-            <input type="text" id="search" name="q" placeholder="Search...">
-            <input type="submit" value="Google Search">
-        </form>
+        <nav class="navbar navbar-expand-sm navbar-light justify-content-between">
+            <a class="navbar-brand" href="#"></a>
+            <div class="navbar-nav justify-content-end">
+                <a class="nav-item nav-link" href="image-search.html">Image Search</a>
+                <a  class="nav-item nav-link"href="advanced-search.html">Advanced Search</a>
+            </div>
+        </nav>
+        <div class="d-flex justify-content-center align-items-center container mt">
+            <h1 class="text-primary">G</h1>
+            <h1 class="text-danger">o</h1>
+            <h1 class="text-warning">o</h1>
+            <h1 class="text-primary">g</h1>
+            <h1 class="text-success">o</h1>
+            <h1 class="text-danger">l</h1>
+        </div>
+        <div class="d-flex justify-content-center align-items-center container">
+            <form action="https://google.com/search">
+                <div class="row">
+                    <div class="form-group col-md-12">
+                        <input type="text" name="q" class="form-control form-rounded" placeholder="&#128269;">
+                    </div>
+                </div>
 
-        <script>
-            function validateSearch() {
-                var searchInput = document.getElementById('search');
-                if (searchInput.value.trim() === '') {
-                    alert('Please enter a search query.');
-                    return false;
-                }
-                return true;
-            }
-        </script>
+                <div class="row">
+                    <div class="col-sm-12 text-center">
+                        <input type="submit" name=btnG value="Google Search" class="btn-pri">
+                        <input type="submit" name=btnI value="I'm Feeling Lucky" class="btn-pri">
+                     </div>
+                </div>
+                
+            </form>
+        </div>
+        
     </body>
 </html>
