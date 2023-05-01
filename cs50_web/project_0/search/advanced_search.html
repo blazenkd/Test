@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Google Advanced Search</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="image_search.html">Image Search</a></li>
+            </ul>
+        </nav>
+    </header>
+    <h1>Google Advanced Search</h1>
+    <main>
+    <form action="https://www.google.com/advanced_search" method="get">
+        <label>Find pages with:</label><br>
+        <input type="text" name="as_q" placeholder="all these words" /><br>
+        <label>But don't show pages that have:</label><br>
+        <input type="text" name="as_eq" placeholder="this exact word or phrase" /><br>
+        <label>Find pages that are:</label><br>
+        <select name="as_sitesearch">
+          <option value="">Any site</option>
+          <option value=".edu">Educational sites</option>
+          <option value=".gov">Government sites</option>
+        </select><br>
+        <label>Language:</label><br>
+        <select name="lr">
+          <option value="">Any language</option>
+          <option value="lang_en">English</option>
+          <option value="lang_es">Spanish</option>
+        </select><br>
+        <input type="submit" value="Google Advanced Search" />
+    </form>
+    </main>
+</body>
+</html>
