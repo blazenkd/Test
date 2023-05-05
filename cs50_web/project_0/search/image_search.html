@@ -1,24 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <title>Google Image Search</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Google Image Search</title>
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <header>
         <nav>
-            <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="advanced_search.html">Advanced Search</a></li>
-            </ul>
+            <div class="topnav">
+                <a href="index.html">Google Search</a>
+                <a href="advanced_search.html">Advanced Search</a>
+            </div>
+            <h1>Google Image Search</h1>
         </nav>
     </header>
-    <h1>Google Image Search</h1>
     <main>
-    <form action="https://www.google.com/search" method="get">
-        <input type="text" name="q" placeholder="Search..." />
-        <input type="submit" value="Google Search" />
-        <input type="hidden" name="tbm" value="isch" />
-    </form>
+        <form action="https://www.google.com/search" method="get">
+            <div class="search-container">
+                <label for="search-bar" class="visually-hidden">Search:</label>
+                <input type="text" id="search-bar" name="q" placeholder="Search Image Google">
+                <button type="submit" id="search-button">Google Search</button>
+            </div>
+        </form>
     </main>
 </body>
+
 </html>

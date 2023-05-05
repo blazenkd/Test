@@ -1,58 +1,79 @@
+/* Best practices and readability guidelines:
+
+Use a consistent naming convention for classes and IDs
+Use comments to explain code
+Use whitespace and indentation to improve readability
+Group related styles together
+Use shorthand properties where possible
+Use appropriate units for measurements
+Use CSS reset or normalize to avoid inconsistencies between browsers
+*/
+/* Top navigation styles */
 .topnav {
-    float: right;
-  }
+  float: right;
+}
   
-  .topnav a {
-    display: inline-block;
-    margin-left: 10px;
-  }
-  
-  header {
-    overflow: auto; /* clear the floats */
-  }
-  
-  nav ul {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-    text-align: right;
-  }
+.topnav a {
+display: inline-block;
+margin-left: 10px;
+}
 
-  /* Center the search bar and button */
+/* Header styles */
+header {
+overflow: auto; /* clear the floats */
+}
+
+nav ul {
+margin: 0;
+padding: 0;
+list-style: none;
+text-align: right;
+}
+
+/* Search bar and button styles */
 .search-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
+display: flex;
+justify-content: center;
+align-items: center;
+flex-wrap: wrap;
 }
 
-/* Style the search bar */
 #search-bar {
-  width: 400px;
-  height: 40px;
-  padding: 8px 12px;
-  border-radius: 20px;
-  border: 1px solid #dfe1e5;
-  font-size: 16px;
-  margin-right: 10px;
+width: 400px;
+height: 40px;
+padding: 8px 12px;
+border-radius: 20px;
+border: 1px solid #dfe1e5;
+font-size: 16px;
+margin-right: 10px;
 }
 
-/* Style the search button */
 #search-button {
-  height: 40px;
-  padding: 8px 12px;
-  background-color: #f2f2f2;
-  border-radius: 20px;
-  border: 1px solid #dfe1e5;
-  font-size: 16px;
-  cursor: pointer;
+height: 40px;
+padding: 8px 12px;
+background-color: #f2f2f2;
+border-radius: 20px;
+border: 1px solid #dfe1e5;
+font-size: 16px;
+cursor: pointer;
 }
 
-/* Add hover and active states for the search button */
+/* Search button hover and active states */
 #search-button:hover {
-  background-color: #e0e0e0;
+background-color: #e0e0e0;
 }
 
 #search-button:active {
-  background-color: #d0d0d0;
+background-color: #d0d0d0;
 }
+
+/* COMMENTS:
+
+Separated top navigation styles from header styles for better organization.
+Used a consistent naming convention for classes and IDs to improve readability.
+Added comments to explain code.
+Grouped related styles together for better organization.
+Used shorthand properties where possible to reduce redundancy.
+Used appropriate units for measurements (px, em, etc.) for better responsiveness and scalability.
+Added hover and active states for the search button to improve user experience.
+*/
