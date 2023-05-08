@@ -1,21 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Landing</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="styles.css">
+  <title>Search</title>
 </head>
 <body>
-    <header>
-        <nav>
-            <ul>
-                <li><a href="home.html">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
+  <div class="container">
+    <div class="row h-25">
+      <div class="col my-auto">
+        <div class="nav-link text-right">
+          <a href="advanced_search.html" class="text-secondary">Advanced Search</a>
+          &emsp;
+          <a href="image_search.html" class="text-secondary">Image search</a>
+        </div>
+      </div>
+    </div>
+    
+    <div class="row h-75">
+      <div class="col-lg-6 col-md-8 col-sm-10 mx-auto my-auto">
+        <div class="text-center mb-3">
+          <img src="google.png" class="img-fluid" alt="Google web search">
+        </div>
+        <div class="text-center">
+          <form action="https://google.com/search">
+            <div class="form-group">
+              <label for="search-bar" class="visually-hidden">Search:</label>
+              <input type="text" id="search-bar" name="q" class="form-control form-control-lg form-control-borderless">
+            </div>
+            <button type="submit" class="btn btn-primary btn-lg">Google Search</button>
+            <button type="submit" class="btn btn-primary btn-lg" name="btnI">I'm Feeling Lucky</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
