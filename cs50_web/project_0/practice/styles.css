@@ -1,40 +1,66 @@
-html, body {
-    height: 75%;
+nav .navbar-nav a {
+  font-size: x-small;
+  color: black !important;
 }
 
-.container {
-    height: 100%;
+.nav-item:hover {
+  text-decoration: underline;
 }
 
-.form-rounded{
-    border-radius: 1rem;
+.form-rounded {
+  border-radius: 50px;
+  width: 480px;
 }
 
-.nav-link {
-    font-size: 0.9rem;
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    gap: 1rem;
-  }
-
-.btn-main{
-    color: rgb(95, 99, 104);
-    background-color: rgb(242, 242, 242);
-    border-color: rgb(242, 242, 242);
+.form-control:focus {
+  border-color: #A4A4A4;
+  -webkit-box-shadow: none;
+  box-shadow: none;
 }
 
-.btn-main:hover{
-    background-color: rgb(248, 248, 248);
-    border-color: rgb(198, 198, 198);
-    color: rgb(34, 34, 34);
+.mt {
+  margin-top: 90px;
 }
 
-#adv-search{
-    color: rgb(217, 48, 37);
-    font-size: 1.3rem;
+h1 {
+  font-size: 60px;
+  margin-bottom: 20px;
 }
 
-#search-text{
-    font-size: 1.2rem;
+.btn-pri {
+  color: #616161;
+  border-radius: 5px;
+  padding: 5px 8px;
+  background-color: #e7e4e4;
+  border-width: 0px;
+  font-size: x-small;
+  margin-right: 8px;
+}
+
+.btn-pri:hover {
+  color: black;
+  border: 1px solid grey;
+}
+
+.submit-icon {
+  position: relative;
+  max-width: 35px;
+  max-height: 35px;
+}
+
+.btn-xss {
+  padding: 0.5rem 0.4rem;
+  font-size: 0.75rem;
+  line-height: 0.5;
+  border-radius: 0.2rem;
+  font-weight: bold;
+}
+.google-advanced-search {
+  width: 400px; /* Adjust the width as per your preference */
+  max-width: 100%;
+  padding: 6px 8px;
+  font-size: 14px;
+  line-height: 1.5;
+  border-radius: 4px;
+  border: 1px solid #ccc;
 }
