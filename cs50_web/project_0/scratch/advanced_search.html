@@ -8,6 +8,27 @@
         <div class="header">
             <a href="index.html">Google Search</a>
         </div>
-        <!-- Rest of your advanced search page content -->
+        
+        <div class="search-container">
+            <form action="https://www.google.com/search" method="GET">
+                <div>
+                    <label for="all-words">Find pages with... "all these words:"</label>
+                    <input type="text" name="as_q" id="all-words">
+                </div>
+                <div>
+                    <label for="exact-phrase">Find pages with... "this exact word or phrase:"</label>
+                    <input type="text" name="as_epq" id="exact-phrase">
+                </div>
+                <div>
+                    <label for="any-words">Find pages with... "any of these words:"</label>
+                    <input type="text" name="as_oq" id="any-words">
+                </div>
+                <div>
+                    <label for="none-words">Find pages with... "none of these words:"</label>
+                    <input type="text" name="as_eq" id="none-words">
+                </div>
+                <button type="submit" class="search-button">Search</button>
+            </form>
+        </div>
     </body>
 </html>
