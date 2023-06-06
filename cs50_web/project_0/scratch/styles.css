@@ -2,10 +2,18 @@
     text-align: right;
     padding: 10px;
 }
-  
+
 .search-container {
     text-align: center;
     margin-top: 20px;
+}
+
+.advanced-search-container {
+    text-align: left;
+}
+
+.advanced-search-container div {
+    margin-bottom: 10px;
 }
 
 .search-bar {
@@ -18,8 +26,28 @@
 
 .search-button {
     margin-top: 10px;
-    border: 1px solid #ccc;
+    border: none;
     border-radius: 20px;
     padding: 8px 15px;
     font-weight: bold;
+    background-color: #4285f4;
+    color: white;
 }
+
+.lucky-button {
+    margin-top: 10px;
+    margin-left: 5px;
+    padding: 8px 15px;
+    font-weight: bold;
+    background-color: #fbbc05;
+    color: black;
+    text-decoration: none;
+    border-radius: 20px;
+  }
+  
+  
+  
+  
+  
+  
+  

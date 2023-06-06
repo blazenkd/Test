@@ -1,20 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <title>Search</title>
-        <link rel="stylesheet" href="styles.css">
-    </head>
-    <body>
-        <div class="header">
-            <a href="image_search.html">Image Search</a> |
-            <a href="advanced_search.html">Advanced Search</a>
-        </div>
-        <div class="search-container">
-            <form action="https://www.google.com/search" method="GET">
-                <input type="text" name="q" class="search-bar" placeholder="Search Google">
-                <br>
-                <input type="submit" value="Google Search" class="search-button">
-            </form>
-        </div>
-    </body>
+  <head>
+    <title>Search</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <div class="header">
+      <a href="image_search.html">Image Search</a> |
+      <a href="advanced_search.html">Advanced Search</a>
+    </div>
+    <div class="search-container">
+      <form action="https://www.google.com/search" method="GET" id="search-form">
+        <input type="text" name="q" class="search-bar" placeholder="Search Google" id="search-query">
+        <br>
+        <input type="submit" value="Google Search" class="search-button">
+        <a href="#" onclick="handleLuckyClick(event)" class="lucky-button">I'm Feeling Lucky</a>
+      </form>
+    </div>
+
+    <script>
+      function handleLuckyClick(event) {
+        event.preventDefault(); // Prevent form submission
+        var searchQuery = document.getElementById('search-query').value;
+        var luckyLink = 'https://www.google.com/search?q=' + encodeURIComponent(searchQuery) + '&btnI=1';
+        window.location.href = luckyLink;
+      }
+    </script>
+  </body>
 </html>
